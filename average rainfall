@@ -1,0 +1,16 @@
+years = int(input("Enter number of years for rainfall:  "))
+months = ["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"]
+sum_rainfall = 0
+
+for year in range(1,years+1):
+    for month in months:                  
+        rainfall = float(input("\nEnter the amount of rainfall for the month {} of the"
+                               " year {}: ".format(month, year)))        
+        sum_rainfall += rainfall
+
+
+sum_months = years * len(months)
+average = sum_rainfall // len(months)
+print("\nIt rained the total of",sum_rainfall, "inches.")
+print("In", sum_months,"months, it rained", average, "inches per month.") 
