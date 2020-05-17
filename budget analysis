@@ -1,0 +1,19 @@
+budget = float(input("Enter your monthly budget:  "))
+running_total = 0
+keep_going = 'y'
+
+while keep_going == 'y':
+    try:
+        expenses = float(input("Enter each of your expenses: "))
+        running_total += expenses
+    except:
+        print("Please, enter numerical values only.")
+    keep_going = input("Enter 'y' to keep adding your expenses:  ")
+    if keep_going != 'y':
+        break
+if running_total > budget:
+    print("Your expenses are more than your budget by $",running_total - budget,".")
+elif budget > running_total:
+    print("You have extra $", budget - running_total, "left after your expenses.")
+else:
+    print("You have exact budget for your expenses.")
